@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>RECIPE</title>
+</head>
+<style>
+	*{margin:0;padding:0;}
+    ul,li{list-style:none;}
+    .slide{height:609px; width: 1159px; overflow:hidden;position:relative;}
+    .slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;transition:1s;}
+    .slide li:nth-child(1){background:#F2F2F2;}
+    .slide li:nth-child(2){background:#F2F2F2;}
+    .slide li:nth-child(3){background:#F2F2F2;}
+	.slide li:nth-child(4){background:#F2F2F2;}
+	.slide li:nth-child(5){background:#F2F2F2;}
+	.slide li:nth-child(6){background:#F2F2F2;}
+	.slide li:nth-child(7){background:#F2F2F2;}
+    .slide input{display:none;}
+	.slide {text-align: center;}
+    .slide .bullet{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:10;}
+    .slide .bullet label{width:10px;height:10px;border-radius:10px; solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;cursor:pointer;}
+    /* 슬라이드 조작 */
+    #pos1:checked ~ ul li:nth-child(1),
+    #pos2:checked ~ ul li:nth-child(2),
+    #pos3:checked ~ ul li:nth-child(3),
+	#pos4:checked ~ ul li:nth-child(4),
+	#pos5:checked ~ ul li:nth-child(5),
+	#pos6:checked ~ ul li:nth-child(6),
+    #pos7:checked ~ ul li:nth-child(7){opacity:1;}
+    /* bullet 조작 */
+    #pos1:checked ~ .bullet label:nth-child(1),
+    #pos2:checked ~ .bullet label:nth-child(2),
+    #pos3:checked ~ .bullet label:nth-child(3),
+	#pos4:checked ~ .bullet label:nth-child(4),
+    #pos5:checked ~ .bullet label:nth-child(5),
+    #pos6:checked ~ .bullet label:nth-child(6),
+    #pos7:checked ~ .bullet label:nth-child(7){background:#666;}
+	@font-face {
+		font-family: 'jalnan';
+		src:url("jalnan.ttf");
+	}
+		
+		@font-face {
+		font-family: 'jejugotham';
+		src:url("JejuGothic.ttf");
+		}
+	
+	@font-face {
+		font-family: 'S-Core Dream';
+		src:url("SCDream8.otf");
+		}
+	#wrap{width: 1920px; height: 3250px; margin: 0 auto; background-color: #fffcf7;}
+	#top_nevi{width: 186px; height: 120px; float: left;} 
+	#logo_box {width: 1746px; height: 120px; margin-left: 174px; background-color: #512413;}
+	#logo {width: 505px; height: 120px; margin-left: 537px;}
+	#mid_logo_box { width: 1920px; height: 345px; margin-top: -250px; clear: both;
+	}
+	#mid_logo_content { width: 505px; height: 191px;  margin-left: 670px; margin-top: 155px; text-align: center; font-size: 62pt; padding-top: 100px; clear: both;
+	}
+	#mid_content { width: 1920px; height: 597px;  background-color: #FFFCF7; clear: both;
+	}
+	#movie { width: 790px; height: 447px;  margin-top: -70px; margin-left: 88px; float: left;
+	}
+	#text1 { width: 219px; height: 445px;  margin-top: -40px; margin-left: 118px; float: left; 
+	} 
+	#under {clear: both; margin-left: 910px; }
+	#under2 {clear: both; margin-left: 910px; margin-top: -350px; }
+	#last_content { width: 1920px; height: 1080px;  margin-top: 105px; background-color: #FFFCF7;
+	}
+	#last_content_box { width: 1920px; height: 700px;  margin-top: 129px; background-color: #ffebc9;
+	}
+	#slide {margin-top: 42px; margin-left: 393px; padding-top: 45px;}
+	#bottom_text {margin-left: 432px; margin-top: 200px;}
+	#card1 {margin-left: 239px; float: left; margin-top: 163px; margin-bottom: 64px;}
+	#card2 {margin-left: 39px; float: left; margin-top: 163px;}
+	#card3 {margin-left: 39px; float: left; margin-top: 163px;}
+	#footer {clear: both; width: 1920px; height: 137px; background-color: #512413; margin-top: 64px;}
+	#foot_logo { margin-left: 800px; padding-top: 23px;}
+	</style>
+<body>
+	<div id="wrap">
+		<div id="top_nevi">
+		<img src="images/PAGE03_01.png">
+		</div>
+		<div id="logo_box">
+		<div id="logo">
+			<a href="test01.html"><img src="images/PAGE03_03.png"></a>
+			</div>
+		</div>
+		<div id="wave">
+		<img src="images/PAGE03_05.png">
+		</div>
+		<div id="mid_logo_box">
+		<div id="mid_logo_content">
+			<img src="images/PAGE03_02.png">
+			</div>
+		</div>
+		<div id="mid_content">
+		<div id="movie">
+			<iframe width="790" height="447" src="https://www.youtube.com/embed/oQHt8o7iIlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="text1">
+			<img  src="images/PAGE03_04.png">
+					</div>
+			<div id="under">
+				<img width="100" src="images/scrollpoint.png">
+		</div>
+		<div id="last_content">
+			<div id="last_content_box">
+				<div id="slide">
+				<div class="slide">
+    <input type="radio" name="pos" id="pos1" checked>
+    <input type="radio" name="pos" id="pos2">
+    <input type="radio" name="pos" id="pos3">
+	<input type="radio" name="pos" id="pos4">
+	<input type="radio" name="pos" id="pos5">
+	<input type="radio" name="pos" id="pos6">
+
+    <ul>
+      <li><img src="images/PAGE03_10.png"  alt="" /></li>
+      <li><img src="images/PAGE03_11.png"  alt="" /></li>
+      <li><img src="images/PAGE03_12.png"  alt="" /></li>
+	<li><img src="images/PAGE03_13.png"  alt="" /></li>
+	<li><img src="images/PAGE03_14.png"  alt="" /></li>
+	<li><img src="images/PAGE03_15.png"  alt="" /></li>
+		<li><img src="images/PAGE03_16.png"  alt="" /></li>
+    </ul>
+    <p class="bullet">
+      <label for="pos1">1</label>
+      <label for="pos2">2</label>
+      <label for="pos3">3</label>
+		<label for="pos4">4</label>
+      <label for="pos5">5</label>
+      <label for="pos6">6</label>
+		<label for="pos7">7</label>
+    </p>
+  </div>
+				</div>
+			</div>
+			</div>
+			<div id="under2">
+				<img width="100" src="images/scrollpoint.png">
+			</div>
+			<div id="bottom_box">
+			<div id="bottom_text">
+				<img src="images/PAGE03_17.png">
+				</div>	
+				<div id="card1">
+				<img src="images/PAGE03_24.png">
+				</div>
+				<div id="card2">
+				<img src="images/PAGE03_26.png">
+				</div>
+				<div id="card3">
+				<img src="images/PAGE03_27.png">
+				</div>
+			</div>
+			<div id="footer">
+				<div id="foot_logo">
+			<img width="300" src="images/PAGE03_03.png">
+				</div>
+			</div>
+	</div>
+</body>
+</html>
