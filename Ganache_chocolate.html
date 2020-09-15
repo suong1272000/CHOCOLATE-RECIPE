@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>RECIPE</title>
+</head>
+<style>
+	*{margin:0;padding:0;}
+    ul,li{list-style:none;}
+    .slide{height:609px; width: 1159px; overflow:hidden;position:relative;}
+    .slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;transition:1s;}
+    .slide li:nth-child(1){background:#F2F2F2;}
+    .slide li:nth-child(2){background:#F2F2F2;}
+    .slide li:nth-child(3){background:#F2F2F2;}
+	.slide li:nth-child(4){background:#F2F2F2;}
+	.slide li:nth-child(5){background:#F2F2F2;}
+	.slide li:nth-child(6){background:#F2F2F2;}
+	.slide li:nth-child(7){background:#F2F2F2;}
+    .slide input{display:none;}
+	.slide {text-align: center;}
+    .slide .bullet{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:10;}
+    .slide .bullet label{width:10px;height:10px;border-radius:10px; solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;cursor:pointer;}
+    /* 슬라이드 조작 */
+    #pos1:checked ~ ul li:nth-child(1),
+    #pos2:checked ~ ul li:nth-child(2),
+    #pos3:checked ~ ul li:nth-child(3),
+	#pos4:checked ~ ul li:nth-child(4),
+	#pos5:checked ~ ul li:nth-child(5),
+	#pos6:checked ~ ul li:nth-child(6),
+    #pos7:checked ~ ul li:nth-child(7){opacity:1;}
+    /* bullet 조작 */
+    #pos1:checked ~ .bullet label:nth-child(1),
+    #pos2:checked ~ .bullet label:nth-child(2),
+    #pos3:checked ~ .bullet label:nth-child(3),
+	#pos4:checked ~ .bullet label:nth-child(4),
+    #pos5:checked ~ .bullet label:nth-child(5),
+    #pos6:checked ~ .bullet label:nth-child(6),
+    #pos7:checked ~ .bullet label:nth-child(7){background:#666;}
+	@font-face {
+		font-family: 'jalnan';
+		src:url("jalnan.ttf");
+	}
+		
+		@font-face {
+		font-family: 'jejugotham';
+		src:url("JejuGothic.ttf");
+		}
+	
+	@font-face {
+		font-family: 'S-Core Dream';
+		src:url("SCDream8.otf");
+		}
+	#wrap{width: 1920px; height: 3250px; margin: 0 auto; background-color: #fffcf7;} 
+	#logo_box {width: 1920px; height: 120px;  background-color: #512413;}
+	#logo {width: 505px; height: 120px; margin-left: 700px;}
+	#mid_logo_box { width: 1920px; height: 345px; margin-top: -250px; clear: both;
+	}
+	#mid_logo_content { width: 505px; height: 191px;  margin-left: 670px; margin-top: 155px; text-align: center; font-size: 62pt; padding-top: 100px; clear: both;
+	}
+	#mid_content { width: 1920px; height: 597px;  background-color: #FFFCF7; clear: both;
+	}
+	#movie { width: 790px; height: 447px;  margin-top: -70px; margin-left: 88px; float: left;
+	}
+	#text1 { width: 219px; height: 445px;  margin-top: -40px; margin-left: 118px; float: left; 
+	} 
+	#under {clear: both; margin-left: 910px; }
+	#under2 {clear: both; margin-left: 910px; margin-top: -350px; }
+	#last_content { width: 1920px; height: 1080px;  margin-top: 105px; background-color: #FFFCF7;
+	}
+	#last_content_box { width: 1920px; height: 700px;  margin-top: 129px; background-color: #ffebc9;
+	}
+	#slide {margin-top: 42px; margin-left: 393px; padding-top: 45px;}
+	#bottom_text {margin-left: 432px; margin-top: 200px;}
+	#card1 {margin-left: 239px; float: left; margin-top: 163px; margin-bottom: 64px;}
+	#card2 {margin-left: 39px; float: left; margin-top: 163px;}
+	#card3 {margin-left: 39px; float: left; margin-top: 163px;}
+	#footer {clear: both; width: 1920px; height: 137px; background-color: #512413; margin-top: 64px;}
+	#foot_logo { margin-left: 800px; padding-top: 23px;}
+	
+	.nav-open main {
+  transform: scale(0.9);
+}
+
+.nav-trigger {
+  position: absolute;
+  z-index: 4;
+  top: 40px;
+  right: 40px;
+  height: 44px;
+  width: 44px;
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+
+.nav-trigger span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s;
+}
+
+.nav-trigger:hover span,
+.nav-trigger:hover span::before,
+.nav-trigger:hover span::after {
+  background-color: #999;
+}
+
+span,
+span::before,
+span::after {
+  position: absolute;
+  height: 4px;
+  width: 36px;
+  background-color: #fffcf7;
+}
+
+.nav-trigger span::before,
+.nav-trigger span::after {
+  content: "";
+  top: 0;
+  left: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.nav-trigger span::before {
+  transform: translateY(-12px);
+}
+
+.nav-trigger span::after {
+  transform: translateY(12px);
+}
+
+.nav-open .nav-trigger span {
+  background: transparent;
+}
+
+.nav-open .nav-trigger span::before {
+  transform: rotate(-45deg);
+}
+
+.nav-open .nav-trigger span::after {
+  transform: rotate(45deg);
+}
+
+.nav-open .nav-trigger span::before,
+.nav-open .nav-trigger span::after {
+  background-color: black;
+}
+	.nav-container {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 90%;
+  max-width: 460px;
+  padding: 2rem 3.5rem;
+  background-color: white;
+  overflow: auto;
+  transform: translateZ(0);
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.07, 0.23, 0.34, 1);
+}
+.nav-container h2 {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 1.5rem 0;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+}
+.nav a {
+  display: block;
+  padding: 0.4rem;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: jalnan;
+  text-decoration: none;
+  color: #512413;
+  transition: color 0.4s;
+  transform: translateZ(0);
+}
+.nav a:hover {
+  color: gray;
+}
+
+.nav-open .nav-container {
+  transform: translateX(0);
+}
+
+.nav-open .nav a {
+  animation: slide-in 0.4s 0.2s backwards;
+}
+
+.nav-open .nav li:nth-of-type(2) a {
+  animation-delay: 0.3s;
+}
+
+.nav-open .nav li:nth-of-type(3) a {
+  animation-delay: 0.4s;
+}
+
+.nav-open .nav li:nth-of-type(4) a {
+  animation-delay: 0.5s;
+}
+
+.nav-open .nav li:nth-of-type(5) a {
+  animation-delay: 0.6s;
+}
+
+.nav-open .nav li:nth-of-type(6) a {
+  animation-delay: 0.7s;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+	</style>
+<body>
+	<div id="wrap">
+		<a href="#navigation" class="nav-trigger">
+Menu <span></span>
+</a>
+		<nav id="navigation" class="nav-container">
+<header>
+<h2>MENU</h2>
+</header>
+<ul class="nav">
+<li><a href="#">초급</a></li>
+<li><a href="#">중급</a></li>
+<li><a href="#">고급</a></li>
+<li><a href="#">초콜릿 종류</a></li>
+</ul>
+</nav>
+		<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+		<script id="rendered-js">
+var navTrigger = document.getElementsByClassName("nav-trigger")[0];
+var body = document.getElementsByTagName("body")[0];
+
+//when a user clicks, run my function
+navTrigger.addEventListener("click", toggleNavigation);
+
+function toggleNavigation(event) {
+  event.preventDefault();
+  //add nav-open class to body
+  //classList returns a list of the classes applied to the body
+  //check the classes listed on the body and if the body has the class remove it. otherwise, add it.
+  body.classList.toggle("nav-open");
+}
+//# sourceURL=pen.js
+    </script>
+		
+		<div id="logo_box">
+		<div id="logo">
+			<a href="INDEX.html"><img src="images/PAGE03_03.png"></a>
+			</div>
+		</div>
+		<div id="wave">
+		<img src="images/PAGE03_05.png">
+		</div>
+		<div id="mid_logo_box">
+		<div id="mid_logo_content">
+			<img src="images/Ganache_logo.png">
+			</div>
+		</div>
+		<div id="mid_content">
+		<div id="movie">
+			<iframe width="790" height="447" src="https://www.youtube.com/embed/46d28s4q4lQ?list=PLtwR9UK_ntpQia-hr5w834oUMlKa_Baaa" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="text1">
+			<img  src="images/Ganache_recipe.png">
+					</div>
+			<div id="under">
+				<img width="100" src="images/scrollpoint.png">
+		</div>
+		<div id="last_content">
+			<div id="last_content_box">
+				<div id="slide">
+				<div class="slide">
+    <input type="radio" name="pos" id="pos1" checked>
+    <input type="radio" name="pos" id="pos2">
+    <input type="radio" name="pos" id="pos3">
+	<input type="radio" name="pos" id="pos4">
+	<input type="radio" name="pos" id="pos5">
+	<input type="radio" name="pos" id="pos6">
+	<input type="radio" name="pos" id="pos7">
+
+    <ul>
+      <li><img src="images/Ganache_01.jpg"  alt="" /></li>
+      <li><img src="images/Ganache_02.jpg"  alt="" /></li>
+      <li><img src="images/Ganache_03.jpg"  alt="" /></li>
+	<li><img src="images/Ganache_04.jpg"  alt="" /></li>
+	<li><img src="images/Ganache_05.jpg"  alt="" /></li>
+	<li><img src="images/Ganache_06.jpg"  alt="" /></li>
+		<li><img src="images/Ganache_07.jpg"  alt="" /></li>
+    </ul>
+    <p class="bullet">
+      <label for="pos1">1</label>
+      <label for="pos2">2</label>
+      <label for="pos3">3</label>
+		<label for="pos4">4</label>
+      <label for="pos5">5</label>
+      <label for="pos6">6</label>
+		<label for="pos7">7</label>
+    </p>
+  </div>
+				</div>
+			</div>
+			</div>
+			<div id="under2">
+				<img width="100" src="images/scrollpoint.png">
+			</div>
+			<div id="bottom_box">
+			<div id="bottom_text">
+				<img src="images/PAGE03_17.png">
+				</div>	
+				<div id="card1">
+				<img src="images/PAGE03_24.png">
+				</div>
+				<div id="card2">
+				<img src="images/PAGE03_26.png">
+				</div>
+				<div id="card3">
+				<img src="images/PAGE03_27.png">
+				</div>
+			</div>
+			<div id="footer">
+				<div id="foot_logo">
+			<img width="300" src="images/PAGE03_03.png">
+				</div>
+			</div>
+	</div>
+	</div>
+</body>
+</html>
